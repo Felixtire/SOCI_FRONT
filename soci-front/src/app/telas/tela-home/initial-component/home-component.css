@@ -12,7 +12,7 @@
 
 .btn-primary{ background: linear-gradient(180deg,var(--accent), #1f6b4f); box-shadow:0 16px 40px rgba(47,139,102,0.18); border: 1px solid rgba(255,255,255,0.06); }
 
-.btn-secondary{ background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
+.btn-secondary{ background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.18);  transition: 0.3s; }
 
 .btn:hover{ transform:translateY(-4px) scale(1.02); filter:brightness(1.03); }
 .btn:active{ transform:translateY(-1px) scale(.995); }

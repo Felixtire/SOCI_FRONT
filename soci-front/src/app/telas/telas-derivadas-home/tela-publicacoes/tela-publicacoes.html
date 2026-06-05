@@ -1,0 +1,79 @@
+<div class="content-inner">
+
+  <header>
+    <div class="logo-mobile">
+      <span class="logo-star">✦</span>
+      <button class="menu-btn">☰</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="user-section">
+      <button class="notification">🔔</button>
+      <div class="user-info">
+        <h4 id="user-name"></h4>
+        <span id="user-role"></span>
+      </div>
+      <div class="avatar" id="user-avatar"></div>
+    </div>
+  </header>
+
+  <section class="events-banner">
+    <h2 class="events-banner-title">EVENTOS</h2>
+    <div class="events-carousel" id="events-carousel"></div>
+  </section>
+
+  <div class="feed-layout">
+
+    <aside class="friends-sidebar">
+      <div class="friends-card">
+        <h3 class="friends-title">Amigos <span class="friends-icon">👥</span></h3>
+        <ul class="friends-list" id="friends-list"></ul>
+        <button class="friends-more-btn">• • •</button>
+      </div>
+    </aside>
+
+    <main class="feed-main">
+
+      <div class="publish-box">
+        <button class="publish-trigger" id="publish-trigger">
+          <span class="publish-plus">⊕</span>
+          <span>Publique aqui</span>
+        </button>
+        <button class="publish-image-btn" id="publish-image-btn">🖼</button>
+      </div>
+
+      <!-- POST -->
+
+      <div class="post-card" *ngFor="let post of publicacoes$ | async">
+        <div class="post-header">
+          <div class="post-avatar">👤</div>
+          <div class="post-author">
+            <h4 class="post-author-name"></h4>
+            <span class="post-author-role"></span>
+            <span class="post-date">{{post.dataPublicacao | date: 'dd/MM/yyyy'}}</span>
+          </div>
+        </div>
+        <p class="post-conteudo">{{post.conteudo}}</p>
+        <img class="post-image" src="" alt="">
+        <div class="post-actions">
+          <button class="post-action-btn">
+            <span class="action-icon">☆</span>
+            <span class="post-curtidas"></span>
+          </button>
+          <button class="post-action-btn">
+            <span class="action-icon">💬</span>
+            <span class="post-comentarios"></span>
+          </button>
+          <button class="post-share-btn">🔗</button>
+        </div>
+      </div>
+      <!-- /POST -->
+
+    </main>
+
+  </div>
+
+</div>
+
+<button class="fab-create" routerLink="/home/criar-evento" aria-label="Criar Evento">+</button>

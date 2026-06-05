@@ -1,0 +1,60 @@
+<div class="main">
+
+  <div class="formulario-container">
+
+    <div class="formulario">
+
+      <form [formGroup]="formularioPublicacao" (ngSubmit)="criarPublicacao()">
+
+        <!-- TÍTULO -->
+        <div class="form-titles">
+
+          <div class="icon-user">
+            📝
+          </div>
+
+          <h1>Criar Publicação</h1>
+          <h2>Compartilhe algo com a comunidade</h2>
+
+        </div>
+
+
+
+        <!-- CONTEÚDO -->
+        <div class="input-group">
+          <textarea
+            rows="6"
+            placeholder="O que você está pensando?"
+            formControlName="conteudo"
+           >
+          </textarea>
+        </div>
+
+        <!-- IMAGEM -->
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="URL da imagem (opcional)"
+            formControlName="imagemUrl"
+          >
+
+            ">
+        </div>
+
+        <!-- USUÁRIO (hidden ou controlado no TS) -->
+        <input type="hidden" >
+
+        <!-- BOTÃO -->
+        <div class="btn-form">
+          <button type="submit">
+            Publicar
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

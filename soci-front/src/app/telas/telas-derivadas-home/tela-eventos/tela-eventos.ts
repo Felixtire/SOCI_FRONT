@@ -7,4 +7,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './tela-eventos.html',
   styleUrl: './tela-eventos.css',
 })
-export class TelaEventos {}
+export class TelaEventos {
+
+}
