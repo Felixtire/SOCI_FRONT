@@ -1,0 +1,66 @@
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="assets/estrela_udf.png" alt="">
+      <h1>SOCI</h1>
+    </div>
+
+    <nav>
+
+      <a class="nav-item" routerLink="/home" >
+        <span>🏠</span>
+        Início
+      </a>
+
+      <a class="nav-item" routerLink="/home/eventos">
+        <span>📅</span>
+        Eventos
+      </a>
+
+      <a class="nav-item" routerLink="/home/perfil" >
+        <span>👤</span>
+        Perfil
+      </a>
+
+
+      <a class="nav-item" routerLink="/avisos">
+        <span>📢</span>
+        Avisos
+      </a>
+
+      <a class="nav-item" routerLink="/academico">
+        <span>🎓</span>
+        Acadêmico
+      </a>
+
+      <a class="nav-item" routerLink="/documentos">
+        <span>📄</span>
+        Documentos
+      </a>
+
+      <a class="nav-item" routerLink="/contato">
+        <span>💬</span>
+        Fale conosco
+      </a>
+
+    </nav>
+
+    <div class="sidebar-card">
+      <h3>Fique por dentro!</h3>
+
+      <p>
+        Acompanhe os eventos e avisos importantes da sua instituição.
+      </p>
+    </div>
+
+  </aside>
+
+  <!-- CONTENT: child pages render here -->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

@@ -1,16 +1,17 @@
 <div class="main">
 
-
   <div class="formulario-container">
 
-    <div class="img-title"><img src="assets/SOCI.png" alt="SOCI logo"></div>
-
     <div class="formulario">
-
 
       <form>
 
         <div class="form-titles">
+
+          <div class="icon-user">
+            🔐
+          </div>
+
           <h1>Bem-Vindo ao Soci</h1>
           <h2>Entre na sua conta</h2>
 
@@ -19,33 +20,35 @@
         <div class="input-group">
           <input
             type="text"
-            placeholder="Email ou RGM"
-          >
+            placeholder="Email ou RGM">
         </div>
 
         <div class="input-group">
           <input
             type="password"
-            placeholder="Senha"
-          >
+            placeholder="Senha">
         </div>
 
         <div class="btn-form">
-          <button type="submit">Entrar <span><img src="assets/estrela.png" alt=""> </span></button>
-
-          <p>Não possui conta?<span class="login"><a routerLink="/cadastro">Criar Conta</a> </span></p>
-
+          <button type="submit" routerLink="/home">
+            Entrar
+          </button>
         </div>
 
+        <p class="login-text">
+          Não possui conta?
+
+          <span class="login">
+            <a routerLink="/cadastro">
+              Criar Conta
+            </a>
+          </span>
+        </p>
 
       </form>
 
-
     </div>
 
-
-
   </div>
-
 
 </div>

@@ -1,19 +1,59 @@
 <div class="main">
 
-
   <div class="formulario-container">
-
-    <div class="img-title"><img src="assets/SOCI.png"></div>
 
     <div class="formulario">
 
-
-
-      <form>
+      <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
 
         <div class="form-titles">
-          <h1>Bem-Vindo ao Soci</h1>
-          <h2>Crie sua conta</h2>
+          <div class="icon-user">
+            👤
+          </div>
+
+          <h1>Crie sua conta</h1>
+          <h2>Preencha os dados abaixo para se cadastrar</h2>
+        </div>
+
+        <div class="tipo-usuario">
+
+          <h3>Tipo de usuário</h3>
+
+          <div class="radio-group">
+
+            <label
+              class="radio-card"
+              [class.selected]="formulario.get('tipoUsuario')?.value == TipoUsuario.ALUNO">
+
+              <input
+                type="radio"
+                [value]="TipoUsuario.ALUNO"
+                formControlName="tipoUsuario">
+
+              <div>
+                <h4>🎓 Aluno</h4>
+                <p>Acessar cursos e conteúdos</p>
+              </div>
+
+            </label>
+
+            <label
+              class="radio-card"
+              [class.selected]="formulario.get('tipoUsuario')?.value == TipoUsuario.PROFESSOR">
+
+              <input
+                type="radio"
+                [value]="TipoUsuario.PROFESSOR"
+                formControlName="tipoUsuario">
+
+              <div>
+                <h4>👨‍🏫 Professor</h4>
+                <p>Criar e gerenciar conteúdos</p>
+              </div>
+
+            </label>
+
+          </div>
 
         </div>
 
@@ -21,54 +61,93 @@
           <input
             type="text"
             placeholder="Nome completo"
-          >
+            formControlName="nome">
         </div>
+
+        @if (souAluno == true) {
+          <div class="input-group" >
+            <input
+              type="text"
+              placeholder="RGM"
+              formControlName="rgm">
+          </div>
+        }
+
 
         <div class="input-group">
           <input
-            type="text"
-            placeholder="RGM"
-          >
-        </div>
-
-        <div class="input-group">
-          <input
-            type="text"
+            type="email"
             placeholder="E-mail"
-          >
+            formControlName="email">
         </div>
-
 
         <div class="input-group">
           <input
             type="password"
             placeholder="Senha"
-          >
+            formControlName="senha">
         </div>
 
         <div class="input-group">
           <input
             type="password"
-            placeholder="Repetir senha"
-          >
+            placeholder="Confirmar senha"
+            >
         </div>
+
+
+
+        @if (souAluno==true) {
+        <div class="input-group">
+          <input
+            type="date"
+            formControlName="dataNascimento">
+        </div>
+
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Curso"
+            formControlName="curso">
+        </div>
+
+        }
+
+<!--        <div class="input-group">-->
+<!--          <label class="label">-->
+<!--            Foto de perfil (opcional)-->
+<!--          </label>-->
+
+<!--          <input-->
+<!--            type="file"-->
+<!--            accept="image/*"-->
+<!--           >-->
+<!--        </div>-->
+
+
+
 
         <div class="btn-form">
-          <button type="submit">Criar Conta <span><img src="assets/estrela.png"></span></button>
 
-          <p>Já possui conta?<span class="login"><a routerLink="/login">Login</a> </span></p>
+          <button type="submit">
+            Criar Conta
+          </button>
 
         </div>
 
+        <p class="login-text">
+          Já possui conta?
+          <span class="login">
+            <a routerLink="/login">
+              Login
+            </a>
+          </span>
+        </p>
 
       </form>
 
-
     </div>
 
-
-
   </div>
-
 
 </div>
