@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tela-cadastro',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './tela-cadastro.html',
-  styleUrl: './tela-cadastro.css',
+  styleUrls: ['./tela-cadastro.css'],
 })
 export class TelaCadastro {}

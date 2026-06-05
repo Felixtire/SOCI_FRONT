@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/soci-front/src/app/telas/tela-cadastro/tela-cadastro.ts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/soci-front/src/app/telas/tela-cadastro/tela-cadastro.ts" />
+              <option name="originalContent" value="import { Component } from '@angular/core';&#10;&#10;@Component({&#10;  selector: 'app-tela-cadastro',&#10;  standalone: true,&#10;  imports: [],&#10;  templateUrl: './tela-cadastro.html',&#10;  styleUrl: './tela-cadastro.css',&#10;})&#10;export class TelaCadastro {}&#10;" />
+              <option name="updatedContent" value="import { Component } from '@angular/core';&#10;&#10;@Component({&#10;  selector: 'app-tela-cadastro',&#10;  standalone: true,&#10;  imports: [],&#10;  templateUrl: './tela-cadastro.html',&#10;  styleUrls: ['./tela-cadastro.css'],&#10;})&#10;export class TelaCadastro {}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

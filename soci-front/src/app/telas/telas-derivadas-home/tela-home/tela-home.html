@@ -1,1 +1,242 @@
-<p>tela-home works!</p>
+<!-- Component template for TelaHome: header + page content -->
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">
+      <img src="./img/estrela_udf.png" class="estrela" alt="Estrela">
+    </div>
+    <span class="logo-text">SOCI</span>
+  </div>
+
+  <div class="search-bar">
+    <span class="search-icon"><img width="25" height="25" src="https://img.icons8.com/ios-glyphs/25/E6E6E7/search--v1.png" alt="search--v1"/></span>
+    <input type="text" placeholder=" Buscar">
+  </div>
+
+  <div class="user-section">
+    <div class="bell-wrap">
+      <span class="bell-icon"><img width="24" height="24" src="https://img.icons8.com/forma-thin/24/E6E6E7/appointment-reminders.png" alt="appointment-reminders"/></span>
+      <div class="bell-badge"></div>
+    </div>
+    <div class="user-info">
+      <div class="user-name">Vinícius Reis Lima</div>
+      <div class="user-role">aluno</div>
+    </div>
+    <div class="user-avatar"><img width="32" height="32" src="https://img.icons8.com/windows/32/gender-neutral-user.png" alt="gender-neutral-user"/></div>
+  </div>
+</header>
+
+<!-- PAGE WRAP -->
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <nav>
+      <a class="nav-item active" href="#">
+        <span class="nav-icon">
+          <img src="./img/image1.png" alt="Início">
+        </span>
+        Início
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <img src="./img/image2.png" alt="Eventos">
+        </span>
+        Eventos
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <img src="./img/image3.png" alt="Avisos">
+        </span>
+        Avisos
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <img src="./img/image4.png" alt="Acadêmico">
+        </span>
+        Acadêmico
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <img src="./img/image5.png" alt="Documentos">
+        </span>
+        Documentos
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <img src="./img/image6.png" alt="Fale Conosco">
+        </span>
+        Fale conosco
+      </a>
+    </nav>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">
+        <span class="sidebar-card-icon">
+          <img src="./img/image7.png" alt="Fique por Dentro!">
+        </span>
+        <span class="sidebar-card-title">Fique por dentro!</span>
+      </div>
+      <p class="sidebar-card-text">Acompanhe os eventos e avisos importantes da sua instituição.</p>
+      <span class="sidebar-card-arrow"><img width="22" height="22" src="https://img.icons8.com/ios-filled/1D96FF/22/forward--v1.png" alt="forward--v1"/></span>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <h1 class="page-title">Eventos e Avisos Acadêmicos</h1>
+    <p class="page-subtitle">Fique por dentro de tudo que acontece na sua instituição</p>
+
+    <div class="content-grid">
+
+      <!-- EVENTOS -->
+      <div>
+        <div class="section-header">
+          <div class="section-title">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Próximos Eventos
+          </div>
+          <a class="ver-todos" href="#">Ver todos ──›</a>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="event-card">
+          <div class="event-thumb">
+            <img src="./img/image8.png" alt="">
+          </div>
+          <div class="event-body">
+            <div class="event-title">Semana Acadêmica de Ciência e Tecnologia</div>
+            <div class="event-desc">Palestras, workshops e minicursos sobre as tendências do futuro.</div>
+          </div>
+          <div class="event-date-col">
+            <div class="event-day">20 a 24</div>
+            <div class="event-month">MAI</div>
+            <div class="event-year">2026</div>
+            <span class="badge badge-presencial">Presencial</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="event-card">
+          <div class="event-thumb">
+            <img src="./img/image9.png" alt="">
+          </div>
+          <div class="event-body">
+            <div class="event-title">Workshop: Carreira e Desenvolvimento Profissional</div>
+            <div class="event-desc">Dicas práticas para impulsionar sua carreira e desenvolvimento.</div>
+          </div>
+          <div class="event-date-col">
+            <div class="event-day">28</div>
+            <div class="event-month">MAI</div>
+            <div class="event-year">2026</div>
+            <span class="badge badge-online">Online</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="event-card">
+          <div class="event-thumb">
+            <img src="./img/image10.png" alt="">
+          </div>
+          <div class="event-body">
+            <div class="event-title">Feira de Projetos Integradores</div>
+            <div class="event-desc">Apresentação dos projetos desenvolvidos pelos alunos.</div>
+          </div>
+          <div class="event-date-col">
+            <div class="event-day">05</div>
+            <div class="event-month">JUN</div>
+            <div class="event-year">2026</div>
+            <span class="badge badge-presencial">Presencial</span>
+          </div>
+        </div>
+
+        <button class="btn-calendar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Ver calendário completo &nbsp;›
+        </button>
+      </div>
+
+      <!-- AVISOS -->
+      <div>
+        <div class="section-header">
+          <div class="section-title">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            Avisos Acadêmicos
+          </div>
+          <a class="ver-todos" href="#">Ver todos ──›</a>
+        </div>
+
+        <!-- Aviso 1 -->
+        <div class="aviso-card">
+          <div class="aviso-icon-wrap">
+            <img src="./img/image11.png" alt="">
+          </div>
+          <div class="aviso-body">
+            <div class="aviso-top">
+              <span class="aviso-title">Matrícula Abertas</span>
+              <span class="aviso-date">02/05/2026</span>
+            </div>
+            <p class="aviso-desc">Período de matrículas para o segundo semestre de 2024. Não perca o prazo!</p>
+          </div>
+        </div>
+
+        <!-- Aviso 2 -->
+        <div class="aviso-card">
+          <div class="aviso-icon-wrap">
+            <img src="./img/image12.png" alt="">
+          </div>
+          <div class="aviso-body">
+            <div class="aviso-top">
+              <span class="aviso-title">Biblioteca</span>
+              <span class="aviso-date">02/05/2026</span>
+            </div>
+            <p class="aviso-desc">Novos títulos disponíveis na biblioteca digital. Acesse o portal e confira!</p>
+          </div>
+        </div>
+
+        <!-- Aviso 3 -->
+        <div class="aviso-card">
+          <div class="aviso-icon-wrap">
+            <img src="./img/image13.png" alt="">
+          </div>
+          <div class="aviso-body">
+            <div class="aviso-top">
+              <span class="aviso-title">Entrega de Trabalhos</span>
+              <span class="aviso-date">02/05/2026</span>
+            </div>
+            <p class="aviso-desc">Fique atento aos prazos de entrega dos trabalhos finais. Consulte o calendário acadêmico.</p>
+          </div>
+        </div>
+
+        <!-- Aviso 4 -->
+        <div class="aviso-card">
+          <div class="aviso-icon-wrap">
+            <img src="./img/image14.png" alt="">
+          </div>
+          <div class="aviso-body">
+            <div class="aviso-top">
+              <span class="aviso-title">Manutenção do Portal</span>
+              <span class="aviso-date">02/05/2026</span>
+            </div>
+            <p class="aviso-desc">O portal acadêmico estará em manutenção no dia 18/05, das 00h às 06h</p>
+          </div>
+        </div>
+
+        <!-- Email Banner -->
+        <div class="email-banner">
+          <div class="email-banner-icon">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <div class="email-banner-text">
+            <div class="email-banner-title">Receba avisos importantes por e-mail</div>
+            <div class="email-banner-sub">Mantenha seus dados atualizados no portal.</div>
+          </div>
+          <button class="btn-update">Atualizar dados</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
