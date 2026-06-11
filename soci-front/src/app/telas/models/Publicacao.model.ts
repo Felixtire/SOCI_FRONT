@@ -1,7 +1,6 @@
 export interface CriarPublicacao{
   conteudo: string;
   imagemUrl: string;
-  usuarioId: number;
 
 }
 
@@ -11,4 +10,5 @@ export interface PublicacaoResponse{
   imagemUrl: string;
   dataPublicacao: Date;
   usuarioId: number;
+  nomeUsuario: string;
 }

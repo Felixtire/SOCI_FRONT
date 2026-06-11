@@ -3,15 +3,6 @@
   <component name="CopilotDiffPersistence">
     <option name="pendingDiffs">
       <map>
-        <entry key="$PROJECT_DIR$/soci-front/src/app/app.routes.ts">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/soci-front/src/app/app.routes.ts" />
-              <option name="originalContent" value="import { Routes } from '@angular/router';&#10;import { TelaCadastro } from './telas/tela-cadastro/tela-cadastro';&#10;import { TelaLogin } from './telas/tela-login/tela-login';&#10;import { HomeComponent } from './telas/tela-home/initial-component/home-component';&#10;import { TelaPerfil } from './telas/telas-derivadas-home/tela-perfil/tela-perfil';&#10;import { TelaEventos } from './telas/telas-derivadas-home/tela-eventos/tela-eventos';&#10;import { BaseComponent } from './telas/base-component/base-component';&#10;&#10;export const routes: Routes = [&#10;  {&#10;    path: '',&#10;    component: HomeComponent&#10;  },&#10;&#10;  {&#10;    path: 'cadastro',&#10;    component: TelaCadastro&#10;  },&#10;&#10;  {&#10;    path: 'login',&#10;    component: TelaLogin&#10;  },&#10;&#10;  {&#10;    path: 'home',&#10;    component: BaseComponent,&#10;    children: [&#10;      { path: '', redirectTo: 'eventos', pathMatch: 'full' },&#10;      { path: 'eventos', component: TelaEventos },&#10;      { path: 'perfil', component: TelaPerfil }&#10;    ]&#10;  }&#10;];&#10;" />
-              <option name="updatedContent" value="import { Routes } from '@angular/router';&#10;import { TelaCadastro } from './telas/tela-cadastro/tela-cadastro';&#10;import { TelaLogin } from './telas/tela-login/tela-login';&#10;import { HomeComponent } from './telas/tela-home/initial-component/home-component';&#10;import { TelaPerfil } from './telas/telas-derivadas-home/tela-perfil/tela-perfil';&#10;import { TelaEventos } from './telas/telas-derivadas-home/tela-eventos/tela-eventos';&#10;import { BaseComponent } from './telas/base-component/base-component';&#10;&#10;export const routes: Routes = [&#10;  {&#10;    path: '',&#10;    component: HomeComponent&#10;  },&#10;&#10;  {&#10;    path: 'cadastro',&#10;    component: TelaCadastro&#10;  },&#10;&#10;  {&#10;    path: 'login',&#10;    component: TelaLogin&#10;  },&#10;&#10;  {&#10;    path: 'home',&#10;    component: BaseComponent,&#10;    children: [&#10;      { path: '', redirectTo: 'eventos', pathMatch: 'full' },&#10;      { path: 'eventos', component: TelaEventos },&#10;      { path: 'perfil', component: TelaPerfil }&#10;    ]&#10;  }&#10;];" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/soci-front/src/app/telas/telas-derivadas-home/create-evento/create-evento.ts">
           <value>
             <PendingDiffInfo>

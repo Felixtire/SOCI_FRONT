@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conexoes-page {
+  min-height: 100vh;
+  padding: 30px;
+  background: #08111f;
+}
+
+/* HEADER */
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top-header h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.top-header p {
+  color: #8da0b6;
+}
+
+.btn-conectar {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    #1fb6ff,
+    #0066ff
+  );
+}
+
+/* BUSCA */
+
+.pesquisa-card {
+  background: #09172b;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 35px;
+
+  display: flex;
+  gap: 12px;
+}
+
+.campo-busca {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 14px;
+  background: #102744;
+  color: white;
+}
+
+.campo-busca::placeholder {
+  color: #8da0b6;
+}
+
+.btn-buscar {
+  border: none;
+  border-radius: 12px;
+  padding: 0 24px;
+  cursor: pointer;
+
+  background: #1fb6ff;
+  color: white;
+  font-weight: 600;
+}
+
+/* SEÇÕES */
+
+.conexoes-section,
+.sugestoes-section {
+  margin-bottom: 40px;
+}
+
+.conexoes-section h2,
+.sugestoes-section h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+
+.conexoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+
+.usuario-card {
+  background: #09172b;
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 20px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: .3s;
+}
+
+.usuario-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(31,182,255,.5);
+}
+
+.usuario-avatar {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+
+  margin-bottom: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #1fb6ff,
+    #0066ff
+  );
+}
+
+.usuario-card h3 {
+  color: white;
+  margin-bottom: 6px;
+}
+
+.cargo {
+  color: #8da0b6;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* AÇÕES */
+
+.usuario-acoes {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-ver,
+.btn-mensagem,
+.btn-conectar-card {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-ver {
+  background: #102744;
+  color: white;
+}
+
+.btn-mensagem {
+  background: #1fb6ff;
+  color: white;
+}
+
+.btn-conectar-card {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #1fb6ff,
+    #0066ff
+  );
+  color: white;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .conexoes-page {
+    padding: 15px;
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .pesquisa-card {
+    flex-direction: column;
+  }
+
+}

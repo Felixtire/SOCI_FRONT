@@ -23,3 +23,9 @@ export interface UsuarioResponse {
   email: string;
 
 }
+
+export interface UsuarioIdResponse {
+  id: number;
+  nome: string;
+  email: string;
+}

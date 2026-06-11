@@ -1,0 +1,95 @@
+<div class="conexoes-page">
+
+  <header class="top-header">
+
+    <div>
+      <h1>Conexões</h1>
+      <p>Gerencie sua rede de contatos</p>
+    </div>
+
+    <button class="btn-conectar">
+      + Nova Conexão
+    </button>
+
+  </header>
+
+  <section class="pesquisa-card">
+
+    <input
+      type="text"
+      placeholder="Buscar usuário..."
+      class="campo-busca"
+    >
+
+    <button class="btn-buscar">
+      Buscar
+    </button>
+
+  </section>
+
+  <section class="conexoes-section">
+
+    <h2>Minhas Conexões</h2>
+
+    <div class="conexoes-grid">
+
+      <div class="usuario-card" *ngFor="let conexao of conexoes$ | async">
+
+        <div class="usuario-avatar">
+          👤
+<!--  adicionar img quando o sistema for configurado para comportar  -->
+        </div>
+
+        <h3>{{conexao.nomeUsuarioDestino}}</h3>
+
+        <span class="cargo">
+
+        </span>
+
+        <div class="usuario-acoes">
+
+          <button class="btn-ver">
+            Ver Perfil
+          </button>
+
+          <button class="btn-mensagem" (click)="cancelarConexao(conexao.conexaoId)">
+            Cancelar
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="sugestoes-section">
+
+    <h2>Sugestões para conectar</h2>
+
+    <div class="conexoes-grid">
+
+      <div class="usuario-card sugestao" *ngFor="let sugestao of possiveisConexoes$ | async">
+
+        <div class="usuario-avatar">
+          👨‍💻
+        </div>
+
+        <h3>{{sugestao.nome}}</h3>
+
+        <span class="cargo">
+          {{sugestao.email}}
+        </span>
+
+        <button class="btn-conectar-card" (click)="criarConexao(sugestao.id)">
+          Conectar
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

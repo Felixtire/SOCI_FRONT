@@ -16,9 +16,10 @@ export class TelaCriarEvento implements OnInit {
 
   publicacao: CriarPublicacao = {
     conteudo: '',
-    imagemUrl: '',
-    usuarioId: 1,
+    imagemUrl: ''
   };
+
+  nomeUsuario!: string;
 
   constructor(
     private http: HttpClient,
@@ -31,7 +32,6 @@ export class TelaCriarEvento implements OnInit {
     this.formularioPublicacao = this.fb.group({
       conteudo: [this.publicacao.conteudo],
       imagemUrl: [this.publicacao.imagemUrl],
-      usuarioId: [1]
     });
 
 
@@ -44,6 +44,7 @@ export class TelaCriarEvento implements OnInit {
     this.service.criarPublicacao(novaPublicacao).subscribe({
       next: (res) => {
         console.log('Publicação criada com sucesso', res);
+        this.nomeUsuario = res.nomeUsuario;
         this.formularioPublicacao.reset();
         this.router.navigate(['home']);
       },

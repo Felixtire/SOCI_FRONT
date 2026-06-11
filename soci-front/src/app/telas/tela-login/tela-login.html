@@ -4,7 +4,7 @@
 
     <div class="formulario">
 
-      <form>
+      <form [formGroup]="formularioLogin" (ngSubmit)="logar()">
 
         <div class="form-titles">
 
@@ -20,17 +20,21 @@
         <div class="input-group">
           <input
             type="text"
-            placeholder="Email ou RGM">
+            placeholder="Email"
+            formControlName="email"
+          >
         </div>
 
         <div class="input-group">
           <input
             type="password"
-            placeholder="Senha">
+            placeholder="Senha"
+            formControlName="senha"
+          >
         </div>
 
         <div class="btn-form">
-          <button type="submit" routerLink="/home">
+          <button type="submit">
             Entrar
           </button>
         </div>

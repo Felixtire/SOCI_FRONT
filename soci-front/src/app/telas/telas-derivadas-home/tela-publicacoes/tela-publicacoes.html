@@ -27,12 +27,38 @@
 
     <aside class="friends-sidebar">
       <div class="friends-card">
-        <h3 class="friends-title">Amigos <span class="friends-icon">👥</span></h3>
-        <ul class="friends-list" id="friends-list"></ul>
-        <button class="friends-more-btn">• • •</button>
+
+        <h3 class="friends-title">
+          Amigos
+          <span class="friends-icon">👥</span>
+        </h3>
+
+        <ul class="friends-list">
+
+          <li
+            class="friend-item"
+            *ngFor="let conexao of conectados"
+          >
+
+            <div class="friend-avatar">
+              👤
+            </div>
+
+            <div class="friend-info">
+              <h4>{{ conexao.nomeUsuarioDestino }}</h4>
+              <span>Amigo conectado</span>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <button class="friends-more-btn">
+          Ver mais
+        </button>
+
       </div>
     </aside>
-
     <main class="feed-main">
 
       <div class="publish-box">
@@ -45,11 +71,11 @@
 
       <!-- POST -->
 
-      <div class="post-card" *ngFor="let post of publicacoes$ | async">
-        <div class="post-header">
+      <div class="post-card" *ngFor="let post of publicacoes$ | async" >
+        <div class="post-header" >
           <div class="post-avatar">👤</div>
           <div class="post-author">
-            <h4 class="post-author-name"></h4>
+            <h4 class="post-author-name"> {{ post.nomeUsuario}}</h4>
             <span class="post-author-role"></span>
             <span class="post-date">{{post.dataPublicacao | date: 'dd/MM/yyyy'}}</span>
           </div>
