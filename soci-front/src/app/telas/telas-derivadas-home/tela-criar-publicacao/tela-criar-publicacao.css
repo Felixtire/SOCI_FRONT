@@ -6,13 +6,10 @@
 
 .main {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 40px 20px;
-
   background-image: url('/assets/fundo-de-estrelas.png');
   background-size: cover;
   background-position: center;
@@ -26,39 +23,22 @@
 
 .formulario {
   width: 100%;
-
   padding: 40px;
-
   border-radius: 35px;
-
   background: rgba(10, 18, 35, .75);
-
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-
   border: 1px solid rgba(255, 255, 255, .15);
-
-  box-shadow:
-    0 0 30px rgba(0, 174, 255, .15),
-    0 15px 50px rgba(0, 0, 0, .45);
-
+  box-shadow: 0 0 30px rgba(0, 174, 255, .15), 0 15px 50px rgba(0, 0, 0, .45);
   position: relative;
 }
 
 .formulario::before {
   content: '';
-
   position: absolute;
   inset: 0;
-
   border-radius: 35px;
-
-  background: radial-gradient(
-    circle at top,
-    rgba(0, 174, 255, .12),
-    transparent 60%
-  );
-
+  background: radial-gradient(circle at top, rgba(0, 174, 255, .12), transparent 60%);
   pointer-events: none;
 }
 
@@ -70,21 +50,14 @@
 .icon-user {
   width: 80px;
   height: 80px;
-
   border-radius: 50%;
-
   margin: 0 auto 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 40px;
-
   color: #1fb6ff;
-
   border: 1px solid rgba(255, 255, 255, .2);
-
   background: rgba(255, 255, 255, .05);
 }
 
@@ -107,21 +80,13 @@
 .input-group input,
 .input-group textarea {
   width: 100%;
-
   border-radius: 18px;
-
   background: rgba(255, 255, 255, .10);
-
   border: 1px solid rgba(255, 255, 255, .12);
-
   color: white;
-
   outline: none;
-
   padding: 18px;
-
   font-size: 15px;
-
   transition: .3s;
 }
 
@@ -138,9 +103,7 @@
 .input-group input:focus,
 .input-group textarea:focus {
   border-color: #2ca8ff;
-
   box-shadow: 0 0 20px rgba(44, 168, 255, .35);
-
   transform: translateY(-2px);
 }
 
@@ -151,32 +114,19 @@
 .btn-form button {
   width: 100%;
   height: 60px;
-
   border: none;
-
   border-radius: 20px;
-
-  background: linear-gradient(
-    90deg,
-    #1cb5ff,
-    #006dff
-  );
-
+  background: linear-gradient(90deg, #1cb5ff, #006dff);
   color: white;
-
   font-size: 20px;
   font-weight: 600;
-
   cursor: pointer;
-
   transition: .3s;
-
   box-shadow: 0 0 25px rgba(0, 109, 255, .35);
 }
 
 .btn-form button:hover {
   transform: translateY(-3px);
-
   box-shadow: 0 0 40px rgba(0, 109, 255, .55);
 }
 
@@ -186,13 +136,10 @@
 }
 
 @media (max-width: 768px) {
-
   .formulario {
     padding: 25px;
   }
-
   .form-titles h1 {
     font-size: 32px;
   }
-
 }

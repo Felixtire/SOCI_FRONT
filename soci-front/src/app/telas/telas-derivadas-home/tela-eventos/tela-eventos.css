@@ -1,301 +1,121 @@
-*{
-
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-
-  font-family:'Poppins',sans-serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-
-
-.eventos-page{
-
-
-  min-height:100vh;
-
-  padding:30px;
-
-  background:#08111f;
-
-
+.eventos-page {
+  min-height: 100vh;
+  padding: 30px;
+  background: #08111f;
 }
 
-
-
-
-.top-header{
-
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin-bottom:40px;
-
-
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-
-
-.top-header h1{
-
-  color:white;
-
-  font-size:32px;
-
+.top-header h1 {
+  color: white;
+  font-size: 32px;
 }
 
-
-.top-header p{
-
-  color:#8da0b6;
-
-  margin-top:8px;
-
+.top-header p {
+  color: #8da0b6;
+  margin-top: 8px;
 }
 
-
-
-.btn-criar{
-
-
-  border:none;
-
-  padding:14px 25px;
-
-  border-radius:30px;
-
-  cursor:pointer;
-
-  font-weight:600;
-
-  color:white;
-
-
-  background:linear-gradient(
-    135deg,
-    #1fb6ff,
-    #0066ff
-  );
-
-
+.btn-criar {
+  border: none;
+  padding: 14px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #1fb6ff, #0066ff);
 }
 
-
-
-
-.eventos-container{
-
-
-  background:#09172b;
-
-  border-radius:20px;
-
-  padding:30px;
-
-
+.eventos-container {
+  background: #09172b;
+  border-radius: 20px;
+  padding: 30px;
 }
 
-
-
-.eventos-container h2{
-
-  color:white;
-
-  margin-bottom:25px;
-
+.eventos-container h2 {
+  color: white;
+  margin-bottom: 25px;
 }
 
-
-
-
-.eventos-grid{
-
-
-  display:grid;
-
-  grid-template-columns:
-
-repeat(auto-fill,minmax(300px,1fr));
-
-
-  gap:20px;
-
-
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-
-
-
-.evento-card{
-
-
-  display:flex;
-
-  gap:20px;
-
-
-  background:#102744;
-
-
-  padding:20px;
-
-
-  border-radius:18px;
-
-
-  border:1px solid rgba(255,255,255,.08);
-
-
-  transition:.3s;
-
-
+.evento-card {
+  display: flex;
+  gap: 20px;
+  background: #102744;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .3s;
 }
 
-
-
-.evento-card:hover{
-
-
-  transform:translateY(-5px);
-
-
-  border-color:#1fb6ff;
-
-
+.evento-card:hover {
+  transform: translateY(-5px);
+  border-color: #1fb6ff;
 }
 
-
-
-
-
-.evento-data{
-
-
-  min-width:70px;
-
-  height:80px;
-
-
-  border-radius:15px;
-
-
-  background:linear-gradient(
-    135deg,
-    #1fb6ff,
-    #0066ff
-  );
-
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-
-  color:white;
-
-
+.evento-data {
+  min-width: 70px;
+  height: 80px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #1fb6ff, #0066ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-
-
-.evento-data strong{
-
-  font-size:28px;
-
+.evento-data strong {
+  font-size: 28px;
 }
 
-
-
-.evento-data span{
-
-  font-size:14px;
-
+.evento-data span {
+  font-size: 14px;
 }
 
-
-
-
-.evento-info h3{
-
-
-  color:white;
-
-  margin-bottom:10px;
-
-
+.evento-info h3 {
+  color: white;
+  margin-bottom: 10px;
 }
 
-
-
-
-.evento-info p{
-
-
-  color:#bfc7d4;
-
-  font-size:14px;
-
-
-  margin-bottom:15px;
-
-
+.evento-info p {
+  color: #bfc7d4;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
-
-
-
-.dados{
-
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:8px;
-
-
-  color:#8da0b6;
-
-  font-size:13px;
-
-
+.dados {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #8da0b6;
+  font-size: 13px;
 }
 
-
-
-
-
-
-@media(max-width:768px){
-
-
-  .top-header{
-
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:20px;
-
-
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
-
-
-  .eventos-page{
-
-    padding:15px;
-
+  .eventos-page {
+    padding: 15px;
   }
-
-
 }
