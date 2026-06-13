@@ -7,3 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './tela-perfil.css',
 })
 export class TelaPerfil {}
+
+

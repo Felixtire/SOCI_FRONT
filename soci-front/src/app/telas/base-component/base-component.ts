@@ -8,3 +8,4 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
   styleUrl: './base-component.css',
 })
 export class BaseComponent {}
+
