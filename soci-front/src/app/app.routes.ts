@@ -8,6 +8,7 @@ import { BaseComponent } from './telas/base-component/base-component';
 import { TelaCriarEvento } from './telas/telas-derivadas-home/tela-criar-evento/tela-criar-evento';
 import { TelaPublicacoes } from './telas/telas-derivadas-home/tela-publicacoes/tela-publicacoes';
 import { TelaConexoes } from './telas/telas-derivadas-home/tela-conexoes/tela-conexoes';
+import { TelaCriarPublicacao } from './telas/telas-derivadas-home/tela-criar-publicacao/tela-criar-publicacao';
 
 export const routes: Routes = [
   {
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: 'perfil', component: TelaPerfil },
       {path: 'criar-evento', component: TelaCriarEvento},
       {path:'publicacoes', component: TelaPublicacoes},
+      {path:'criar-publicacao', component: TelaCriarPublicacao},
       {path:'conexoes', component: TelaConexoes},
     ]
   }

@@ -47,3 +47,98 @@ body.route-enter .formulario .btn-form { animation-delay: 420ms; }
 body.route-enter .input-group input:focus, body.route-enter .input-group textarea:focus {
   box-shadow: 0 10px 30px rgba(47,139,102,0.08);
 }
+
+/* ========== GLOBAL RESPONSIVITY / THEME HELPERS ========== */
+:root {
+  /* color tokens */
+  --bg: #0b1020;
+  --card: #0f172a;
+  --muted: #9ca3af;
+  --primary: #1cb5ff;
+  --primary-600: #006dff;
+  --text: #e6eef8;
+
+  /* spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  /* breakpoints */
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
+
+/* sensible global container */
+.container {
+  width: 100%;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 576px) {
+  .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+}
+@media (min-width: 1024px) {
+  .container { max-width: 960px; padding-left: var(--space-lg); padding-right: var(--space-lg); }
+}
+@media (min-width: 1280px) {
+  .container { max-width: 1200px; }
+}
+
+/* Responsive typography (fluid scaling) */
+html { font-size: 16px; }
+@media (max-width: 640px) { html { font-size: 15px; } }
+@media (max-width: 420px) { html { font-size: 14px; } }
+
+h1, h2, h3, h4, h5 { color: var(--text); margin: 0 0 8px 0; }
+p, span, a, li { color: var(--text); }
+
+/* images and media */
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+
+/* utility helpers */
+.row { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+.col { flex: 1 1 0; }
+.center { display:flex; align-items:center; justify-content:center; }
+.hidden-sm { display: none; }
+@media (min-width: 768px) { .hidden-sm { display: block; } }
+
+/* responsive grid helper (cards, feed) */
+.grid-cards { display:grid; gap: var(--space-md); grid-template-columns: 1fr; }
+@media (min-width: 768px) { .grid-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1280px) { .grid-cards { grid-template-columns: repeat(3, 1fr); } }
+
+/* buttons responsive adjustments */
+button { font-family: inherit; }
+button.full-mobile { width: 100%; }
+@media (min-width: 640px) { button.full-mobile { width: auto; } }
+
+/* form inputs touch-target improvements */
+input[type="text"], textarea, select, button { font-size: 14px; }
+@media (max-width: 420px) { input[type="text"], textarea, select, button { font-size: 15px; padding: 12px; } }
+
+/* small screens: simplify shadows and heavy effects */
+@media (max-width: 640px) {
+  .formulario, .card, .post-card { box-shadow: none !important; border-radius: 12px !important; }
+}
+
+/* nav / fab adjustments */
+.fab-create { position: fixed; right: 18px; bottom: 18px; width: 56px; height: 56px; border-radius: 50%; font-size: 26px; }
+@media (min-width: 1280px) { .fab-create { right: 40px; bottom: 40px; } }
+
+/* helpers for text truncation */
+.truncate-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.truncate-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Accessibility focus outline */
+:focus { outline: 3px solid rgba(28,181,255,0.18); outline-offset: 2px; }
+
+/* End of responsive utilities */

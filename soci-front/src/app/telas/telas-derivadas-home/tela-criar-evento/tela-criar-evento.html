@@ -4,7 +4,7 @@
 
     <div class="formulario">
 
-      <form [formGroup]="formularioPublicacao" (ngSubmit)="criarPublicacao()">
+      <form [formGroup]="formularioEvento" (ngSubmit)="criarEvento()">
 
         <!-- TÍTULO -->
         <div class="form-titles">
@@ -13,41 +13,37 @@
             📝
           </div>
 
-          <h1>Criar Publicação</h1>
-          <h2>Compartilhe algo com a comunidade</h2>
+          <h1>Criar Evento</h1>
+          <h2>Adicione um novo evento ao calendário</h2>
 
         </div>
 
 
 
-        <!-- CONTEÚDO -->
+        <!-- TÍTULO DO EVENTO -->
         <div class="input-group">
-          <textarea
-            rows="6"
-            placeholder="O que você está pensando?"
-            formControlName="conteudo"
-           >
-          </textarea>
+          <input type="text" placeholder="Título do evento" formControlName="titulo" />
         </div>
 
-        <!-- IMAGEM -->
+        <!-- DATA -->
         <div class="input-group">
-          <input
-            type="text"
-            placeholder="URL da imagem (opcional)"
-            formControlName="imagemUrl"
-          >
-
-            ">
+          <input type="date" placeholder="Data do evento" formControlName="dataEvento" />
         </div>
 
-        <!-- USUÁRIO (hidden ou controlado no TS) -->
-        <input type="hidden" >
+        <!-- LOCAL -->
+        <div class="input-group">
+          <input type="text" placeholder="Local (opcional)" formControlName="local" />
+        </div>
+
+        <!-- DESCRIÇÃO -->
+        <div class="input-group">
+          <textarea rows="6" placeholder="Descrição (opcional)" formControlName="descricao"></textarea>
+        </div>
 
         <!-- BOTÃO -->
         <div class="btn-form">
-          <button type="submit">
-            Publicar
+          <button type="submit" [disabled]="formularioEvento.invalid">
+            Criar Evento
           </button>
         </div>
 

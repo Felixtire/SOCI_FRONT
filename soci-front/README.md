@@ -1,59 +1,131 @@
 # SociFront
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Documentação completa do projeto SociFront (front-end em Angular).
 
-## Development server
+## Visão geral
+SociFront é a aplicação front-end de uma plataforma social acadêmica construída com Angular (v21). Ele consome um backend REST (endereço configurável) que expõe endpoints para usuários, publicações, conexões e eventos.
 
-To start a local development server, run:
+Principais pastas:
+- `src/` - código fonte Angular
+  - `app/` - componentes, rotas e serviços
+  - `assets/` - imagens e arquivos estáticos
+  - `environments/` (se existir) - configurações de ambiente para build
+- `dist/` - artefatos de build (após `ng build`)
 
-```bash
-ng serve
+## Requisitos
+- Node.js (v18+ recomendado)
+- npm (versão compatível com Node, o projeto foi desenvolvido com npm@11.11.0)
+- Docker & Docker Compose (para dockerizar e rodar em containers)
+
+> Observação: Para desenvolvimento local não é necessário ter Docker instalado.
+
+## Configuração local (desenvolvimento)
+1. Instale dependências:
+
+```powershell
+cd C:\Users\warli\Downloads\Telas\soci_front\soci-front
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2. Rodar servidor de desenvolvimento:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```powershell
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abra `http://localhost:4200/` no navegador. A aplicação recarrega automaticamente quando você altera arquivos fonte.
 
-```bash
-ng generate --help
+### Configurar URL do backend
+O front geralmente precisa saber a URL do backend para fazer chamadas HTTP. Existem duas abordagens comuns:
+
+1. Usar os arquivos de ambiente (recomendado para builds):
+   - `src/environments/environment.ts` e `src/environments/environment.prod.ts` (se existir) podem conter uma chave `apiUrl` ou similar.
+   - Ajuste esses arquivos antes de rodar `ng build` para apontarem para o backend correto.
+
+2. Substituir variáveis em tempo de build: você pode usar `sed`/scripts simples ou ferramentas como `envsubst` em pipelines CI para injetar a URL antes de gerar o bundle.
+
+Exemplo mínimo (em `environment.ts`):
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/'
+};
 ```
 
-## Building
+Certifique-se de que o valor usado no serviço (`BackServiceService`) combine com esse `apiUrl`.
 
-To build the project run:
+## Build para produção
+Gera os artefatos otimizados em `dist/`:
 
-```bash
-ng build
+```powershell
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+O conteúdo final fica em `dist/soci-front`.
 
-## Running unit tests
+## Dockerização
+A seguir há instruções para criar uma imagem Docker multi-stage que compila a aplicação e a serve usando `nginx` (prática comum para SPAs).
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Arquivos incluídos
+- `Dockerfile` - imagem multi-stage (builder Node / runtime nginx)
+- `.dockerignore` - arquivos/pastas ignorados no contexto Docker
+- `nginx.conf` - configuração nginx para fallback SPA (rota para index.html)
+- `docker-compose.yml` - exemplo para subir o frontend (e um backend placeholder)
 
-```bash
-ng test
+### Build e executar a imagem Docker (manual)
+No diretório raiz do projeto (onde está o `Dockerfile`):
+
+```powershell
+# build da imagem
+docker build -t soci-front:latest .
+
+# rodar container local mapeando porta 8080
+docker run --rm -p 8080:80 --name soci-front soci-front:latest
 ```
 
-## Running end-to-end tests
+A aplicação ficará acessível em `http://localhost:8080/`.
 
-For end-to-end (e2e) testing, run:
+### Usando docker-compose (exemplo)
+O `docker-compose.yml` incluído define um serviço `frontend` que constrói a imagem e expõe a porta 8080. Para subir com docker-compose:
 
-```bash
-ng e2e
+```powershell
+# subir os serviços (build e run)
+docker-compose up --build
+
+# parar e remover
+docker-compose down
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+> Nota: O container do frontend serve apenas os arquivos estáticos. Se desejar que o nginx faça proxy para um serviço backend dentro do mesmo compose, ajuste o `nginx.conf` e adicione o serviço `backend` no `docker-compose.yml`.
 
-## Additional Resources
+## Arquitetura de build (Dockerfile - multi-stage)
+1. Stage `builder`: usa Node.js para instalar dependências e gerar o `dist/` otimizado.
+2. Stage `runtime`: usa `nginx` para servir os arquivos estáticos com fallback para `index.html` (single page app).
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Dicas importantes
+- Variáveis de ambiente para a API não são aplicáveis diretamente ao bundle já compilado. Se precisar trocar a URL do backend sem reconstruir a imagem, adote uma estratégia de runtime config (ex.: arquivo `config.json` injetado por volume ou um pequeno entrypoint que altera um arquivo JS com a URL antes de iniciar o nginx).
+- Certifique-se de que o backend permita CORS se estiver rodando separado e consumido pelo frontend em outro host/porta.
+
+## Debug / troubleshooting
+- Se o frontend carrega mas as chamadas API retornam 404/401/500:
+  - Verifique `apiUrl` configurado no Angular.
+  - Veja se o backend está rodando e se aceita conexões (CORS, autenticação).
+- Se o build falhar em CI:
+  - Verifique versão do Node e npm.
+  - Assegure que os pacotes dev (como `@angular/cli`) estão disponíveis durante o build.
+
+## Scripts úteis
+- `npm start` - servidor de desenvolvimento
+- `npm run build` - build de produção (gera `dist/`)
+- `npm test` - testes (Vitest/Angular Test Runner)
+
+## Deploy
+- Construir a imagem Docker e enviar para um registry (DockerHub/GCR/Azure Container Registry), depois orquestrar com sua plataforma (Docker Compose, Kubernetes, etc.).
+
+---
+Se quiser, eu posso:
+- Adicionar automaticamente os arquivos `Dockerfile`, `docker-compose.yml`, `.dockerignore` e `nginx.conf` ao seu projeto agora (faço isso para você),
+- Implementar uma estratégia de configuração em runtime para a URL do backend (ex.: `config.json` + script entrypoint),
+- Ou adaptar o `nginx.conf` para fazer proxy reverso para um serviço backend em `docker-compose`.
+
+Diga qual opção prefere e eu aplico as mudanças.

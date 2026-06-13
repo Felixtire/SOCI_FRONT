@@ -4,6 +4,7 @@ import { Usuario, UsuarioResponse } from '../../models/UsuarioCadastro.model';
 import { Observable } from 'rxjs';
 import { CriarPublicacao, PublicacaoResponse } from '../../models/Publicacao.model';
 import { Conectados } from '../../models/Conexoes.model';
+import { EventoRequest, EventoResponse } from '../../models/Eventos.model';
 
 @Injectable({
   providedIn: 'root',
@@ -36,12 +37,13 @@ export class BackServiceService {
 
   }
 
-  criarEvento(){
+  criarEvento(evento: EventoRequest, idUser: number): Observable<EventoResponse>{
+    return this.http.post<EventoResponse>( `${this.url}api/eventos/${idUser}`, evento);
 
   }
 
-  listarEventos(){
-
+  listarEventos(): Observable<EventoResponse[]>{
+    return this.http.get<EventoResponse[]>(`${this.url}api/eventos`);
   }
 
 

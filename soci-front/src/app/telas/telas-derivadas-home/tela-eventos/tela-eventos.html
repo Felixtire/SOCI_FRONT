@@ -1,38 +1,105 @@
-<div class="content-inner">
+<div class="eventos-page">
 
-  <header>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
+
+  <header class="top-header">
+
+    <div>
+
+      <h1>
+        📅 Eventos Acadêmicos
+      </h1>
+
+      <p>
+        Confira os próximos eventos da instituição
+      </p>
+
     </div>
-    <div class="user-section">
-      <button class="notification">🔔</button>
-      <div class="user-info">
-        <h4 id="user-name"></h4>
-        <span id="user-role"></span>
-      </div>
-      <div class="avatar" id="user-avatar"></div>
-    </div>
+
+
+    <button class="btn-criar"
+            routerLink="/home/criar-evento">
+
+      + Criar Evento
+
+    </button>
+
+
   </header>
 
-  <section class="page-title">
-    <h1>Eventos e Avisos Acadêmicos</h1>
-    <p>Fique por dentro de tudo que acontece na sua instituição</p>
+
+
+  <section class="eventos-container">
+
+
+    <h2>
+      Próximos Eventos
+    </h2>
+
+
+
+    <div class="eventos-grid">
+
+
+      <div class="evento-card"
+           *ngFor="let evento of eventos$ | async">
+
+
+
+        <div class="evento-data">
+
+          <strong>
+            {{evento.dataEvento | date:'dd'}}
+          </strong>
+
+          <span>
+{{evento.dataEvento | date:'MMM'}}
+</span>
+
+        </div>
+
+
+
+        <div class="evento-info">
+
+
+          <h3>
+            {{evento.titulo}}
+          </h3>
+
+
+          <p>
+            {{evento.descricao}}
+          </p>
+
+
+
+          <div class="dados">
+
+<span>
+📍 {{evento.local}}
+</span>
+
+
+            <span>
+👤 Criado por {{evento.nomeUsuario}}
+</span>
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
   </section>
 
-  <div class="grid">
 
-    <section class="card-section">
-      <div class="section-top">
-        <h2>📅 Próximos Eventos</h2>
-        <a href="#">Ver todos</a>
-      </div>
-      <!-- eventos inseridos dinamicamente aqui -->
-      <div id="eventos-list"></div>
-    </section>
-
-
-  </div>
 
 </div>
-
-<button class="fab-create" routerLink="/home/criar-evento" aria-label="Criar Evento">+</button>
