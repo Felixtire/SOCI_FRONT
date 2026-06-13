@@ -28,4 +28,10 @@ export interface UsuarioIdResponse {
   id: number;
   nome: string;
   email: string;
+  dataNascimento?: string | null;
+  curso?: string | null;
+  fotoperfil?: string | null;
+  biografia?: string | null;
+  tipoUsuario?: TipoUsuario | null;
+  rgm?: string | null;
 }

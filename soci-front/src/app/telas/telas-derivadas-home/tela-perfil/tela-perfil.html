@@ -11,16 +11,15 @@
 
       <img
         class="avatar"
-        src="assets/logo.png"
+        [src]="usuario?.fotoperfil || 'assets/logo.png'"
         alt="Avatar">
 
       <div class="user-info">
-        <h1>Wellington Félix</h1>
-        <span>Engenharia de Software</span>
+        <h1>{{ usuario?.nome || 'Usuário' }}</h1>
+        <span>{{ usuario?.curso || 'Curso não informado' }}</span>
 
         <p>
-          Estudante de engenharia de software,
-          apaixonado por tecnologia e desenvolvimento.
+          {{ usuario?.biografia || 'Nenhuma biografia informada.' }}
         </p>
       </div>
 
@@ -35,17 +34,17 @@
     <section class="stats">
 
       <div class="stat-card">
-        <h2>128</h2>
+        <h2>{{ publicacoesCount }}</h2>
         <span>Publicações</span>
       </div>
 
       <div class="stat-card">
-        <h2>532</h2>
+        <h2>{{ seguidoresCount }}</h2>
         <span>Seguidores</span>
       </div>
 
       <div class="stat-card">
-        <h2>315</h2>
+        <h2>{{ seguindoCount }}</h2>
         <span>Seguindo</span>
       </div>
 
@@ -66,7 +65,7 @@
             <img src="assets/img.png" alt="">
 
             <div>
-              <h3>Wellington Félix</h3>
+              <h3>{{ usuario?.nome || 'Usuário' }}</h3>
               <span>há 2 horas</span>
             </div>
 
@@ -94,9 +93,19 @@
           <h3>Sobre Mim</h3>
 
           <p>
-            Sou estudante da área de tecnologia,
-            apaixonado por inovação e desenvolvimento.
+            {{ usuario?.biografia || 'Sou estudante da área de tecnologia, apaixonado por inovação e desenvolvimento.' }}
           </p>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Informações</h3>
+
+          <p>Email: {{ usuario?.email || '-' }}</p>
+          <p>Data de nascimento: {{ formattedDataNascimento }}</p>
+          <p>Tipo: {{ tipoUsuarioLabel }}</p>
+          <p>RGM: {{ usuario?.rgm || '-' }}</p>
 
         </div>
 

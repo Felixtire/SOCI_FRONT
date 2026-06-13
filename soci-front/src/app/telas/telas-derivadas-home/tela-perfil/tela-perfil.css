@@ -195,4 +195,15 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
+  .logo img {
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+  }
 }
